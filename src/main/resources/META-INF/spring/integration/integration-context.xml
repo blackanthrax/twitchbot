@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:int="http://www.springframework.org/schema/integration"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.2.xsd">
+  
+  <!-- default Channels -->
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.ACL_INPUT)}" />
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.BANNED_WORDS_INPUT)}" />
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.CAPSLOCK_INPUT)}" />
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.COMMAND_INPUT)}" />
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.IRC_INPUT)}" />
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.MESSAGE_INPUT)}" />
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.TIMEOUT_INPUT)}" />
+
+  <!-- Bot Command Channels -->
+  <int:channel
+    id="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.BOT_COMMANDS_INPUT)}" />
+
+  <!-- IRC gateway proxy -->
+  <int:gateway id="commandServiceGateway"
+    service-interface="com.github.blackanthrax.twitchbot.integration.gateway.IrcMessageGateway" />
+
+  <!-- services -->
+  <int:service-activator id="commandService"
+    input-channel="#{T(com.github.blackanthrax.twitchbot.integration.IntegrationConstants.BOT_COMMANDS_INPUT)}">
+    <bean
+      class="com.github.blackanthrax.twitchbot.integration.serviceactivator.BotCommandServiceActivator" />
+  </int:service-activator>
+</beans>
