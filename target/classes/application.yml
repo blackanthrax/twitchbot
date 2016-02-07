@@ -1,7 +1,0 @@
-server:
-    port: 8080
-
-twitch:
-    auth:
-        name: boticea
-        token: oauth:xt9azbb1odmgilw0e50l9y6o4lnjn6
