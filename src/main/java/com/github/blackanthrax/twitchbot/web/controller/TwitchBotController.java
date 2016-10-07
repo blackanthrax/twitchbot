@@ -1,5 +1,7 @@
 package com.github.blackanthrax.twitchbot.web.controller;
 
+import java.security.Principal;
+
 import org.pircbotx.PircBotX;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +17,11 @@ public class TwitchBotController {
 
     @Autowired
     private PircBotX bot;
+    
+    @RequestMapping
+    public Principal user(Principal principal){
+        return principal;
+    }
 
     @RequestMapping(value = "/join", method = RequestMethod.POST)
     public void join(@RequestBody ChannelDto channel) {

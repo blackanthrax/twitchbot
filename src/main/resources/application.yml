@@ -3,5 +3,15 @@ server:
 
 twitch:
     auth:
-        name: 
-        token: 
+        name: boticea
+        token: oauth:xt9azbb1odmgilw0e50l9y6o4lnjn6 
+        
+security:
+    oauth2:
+        client:
+            clientId: g7bksa7621t7j2kzis0uf6nbixjsfh5
+            clientSecret: p1txrjmllw5t26yv1b8arn71iunjouq
+            accessTokenUri: https://api.twitch.tv/kraken/oauth2/token
+            tokenName: oauth_token
+            authenticationScheme: query
+            clientAuthenticationScheme: form
