@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Demo</title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />
+<base href="/" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript">
+	angular.module("app", []).controller("home", function($http) {
+		var self = this;
+		$http.get("/user").success(function(data) {
+			self.user = data.userAuthentication.details.token.user_name;
+			self.authenticated = true;
+		}).error(function() {
+			self.user = "N/A";
+			self.authenticated = false;
+		});
+
+		self.join = function() {
+			$http.post("/api/join", { "name" : "blackanthrax" })
+			    .success(function(data) {
+			        alert("joined");
+			    }).error(function(data) {
+
+			})
+		}
+	});
+</script>
+</head>
+<body ng-app="app" ng-controller="home as home">
+	<h1>Demo</h1>
+	<div class="container">
+		<div class="container" ng-show="!home.authenticated">
+			Login with: <a href="/login">Twitch</a>
+		</div>
+		<div class="container" ng-show="home.authenticated">
+			Logged in as: <span ng-bind="home.user"></span>
+			<div>
+				<button class="btn btn-primary" ng-click="home.join()">join</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

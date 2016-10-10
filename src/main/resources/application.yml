@@ -2,16 +2,21 @@ server:
     port: 8080
 
 twitch:
-    auth:
-        name: boticea
-        token: oauth:xt9azbb1odmgilw0e50l9y6o4lnjn6 
+    tmi:
+        name: iounbot
+        token: oauth:m2gkosau1eg9jfleq00cc7b5ivx98d 
         
 security:
-    oauth2:
+    oauth2: 
         client:
-            clientId: g7bksa7621t7j2kzis0uf6nbixjsfh5
-            clientSecret: p1txrjmllw5t26yv1b8arn71iunjouq
+            clientId: 5zah4fiectyo1ntlxxepau2iftgz0x6
+            clientSecret: p9xg61xtjiyhmen145nqxdykxikhm3d
             accessTokenUri: https://api.twitch.tv/kraken/oauth2/token
+            userAuthorizationUri: https://api.twitch.tv/kraken/oauth2/authorize
             tokenName: oauth_token
             authenticationScheme: query
             clientAuthenticationScheme: form
+            scope: user_read
+        resource: 
+            prefer-token-info: false
+            userInfoUri: https://api.twitch.tv/kraken
