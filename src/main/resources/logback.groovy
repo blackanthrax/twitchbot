@@ -1,6 +1,6 @@
 scan("60 seconds")
 
-logger("org.springframework", INFO)
+logger("org.springframework", DEBUG)
 logger("com.github.blackanthrax", INFO)
 logger("org.pircbotx", DEBUG)
 

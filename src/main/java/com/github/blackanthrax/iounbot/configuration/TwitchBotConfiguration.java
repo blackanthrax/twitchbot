@@ -23,7 +23,7 @@ public class TwitchBotConfiguration {
     @Bean
     public org.pircbotx.Configuration pircbotxConfig(ListenerAdapter listener) {
         org.pircbotx.Configuration configuration = new org.pircbotx.Configuration.Builder()
-                .addServer("irc.twitch.tv")
+                .addServer("irc.chat.twitch.tv")
                 .setOnJoinWhoEnabled(false)
                 .setName(name)
                 .setCapEnabled(true)

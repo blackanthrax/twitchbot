@@ -16,6 +16,8 @@ public class BotCommandServiceActivator {
     
     @ServiceActivator(inputChannel=IntegrationConstants.BOT_COMMANDS_INPUT)
     public void doStuff(MessageEvent event){
-        
+        if(event.getMessage().contains("echo")) {
+            event.getChannel().send().message(event.getMessage().substring(10));
+        }
     }
 }

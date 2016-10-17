@@ -23,7 +23,7 @@
 		});
 
 		self.join = function() {
-			$http.post("/api/join", { "name" : "blackanthrax" })
+			$http.post("/api/join", { "name" : self.user })
 			    .success(function(data) {
 			        alert("joined");
 			    }).error(function(data) {

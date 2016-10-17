@@ -1,5 +1,7 @@
 package com.github.blackanthrax.iounbot.web.controller;
 
+import static com.github.blackanthrax.iounbot.irc.util.IrcUtils.nameToChannel;
+
 import org.pircbotx.PircBotX;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,7 @@ public class TwitchBotController {
 
     @RequestMapping(value = "/join", method = RequestMethod.POST)
     public void join(@RequestBody ChannelDto channel) {
-        bot.send().joinChannel(channel.getName());
+        bot.send().joinChannel(nameToChannel(channel.getName()));
     }
 
     @RequestMapping(value = "/leave", method = RequestMethod.POST)
