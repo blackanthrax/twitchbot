@@ -5,7 +5,7 @@ addons:
 
 env:
   global:
-    - secure: 
+    - secure: k67hJj4m4hZjY02KrzzKYa1MLJdulJdu61d9c2xdMdouixj6xrw1aZTashWRIYXBj5HXeRtqJHF7zLcUdpqaitnfZVnoN6TEsXxxozm5LuaJ3UCba1U+CcT4N3AsSfbfGNsNcrMu6yIYc355r8WYe6kOry1jDNnblmA/m+guTm2wJvTnAPZx1xmo/ahO5cMvYX0rMfTiWjbjBZH7oFlg2hMQJXWXe2fx5N1oFEM5k/RlRr7QyfiktmhPHyKVYq7/YMGPLsRYtq08N7T/DgTnNYyVOxOapAGQfgXaDalCoM2xAFwZc4v+aUY6FLf1IUoAlsdLhTxxXWjX+Rnts+Wwj+YH3iHmcvMyYsn69YNdhe/krjRrAQyBSHa0QgepUaXrMX0tXsUQfkxPxK2CqjpmvOLj/UCseVDViq0NAypEXBy+dU2kjZbe4wXmiPcvrkNMVMjlotM+y7gUUo/tTK7YBaP0k7rRbd3PMPQ2BfIN6wmH1B8K1uDk/HHFAsNZQtgIVLtgAGVvqogWuunnnR/Rha9WEj9oO8HX5xQQFjdVXGhHbLVM9oCsVSLh53r+6bzLppVgGy+361IdhRyOYjp74b3vZi7wd8M61reyjyk8V/FldgnKD1bG2FxAlsrc/T3gopkQTqLaZrU+mMoW/cT1c7uPsIEywKjkWPxeDCeoRZ8=
 
 script:
   - mvn clean org.jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=$SONAR_TOKEN
