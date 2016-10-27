@@ -1,7 +1,8 @@
 scan("60 seconds")
 
-logger("org.springframework", DEBUG)
-logger("com.github.blackanthrax", INFO)
+logger("org.springframework", INFO)
+logger("org.springframework.integration", DEBUG)
+logger("com.github.blackanthrax", DEBUG)
 logger("org.pircbotx", DEBUG)
 
 appender("CONSOLE", ConsoleAppender) {

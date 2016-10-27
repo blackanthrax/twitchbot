@@ -17,7 +17,7 @@ public class FloodProtectionServiceActivator {
 
     private Map<String, Integer> messages;
 
-    @ServiceActivator(inputChannel = IntegrationConstants.MESSAGE_INPUT)
+    @ServiceActivator(inputChannel = IntegrationConstants.IRC_INPUT)
     public void checkFlood(MessageEvent event) {
         LOG.info("MESSAGE INC");
         String user = event.getUser().getNick();

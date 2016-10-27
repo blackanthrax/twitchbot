@@ -1,0 +1,11 @@
+language: java
+
+addons:
+  sonarqube: true
+
+env:
+  global:
+    - secure: 
+
+script:
+  - mvn clean org.jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=$SONAR_TOKEN
